@@ -25,7 +25,7 @@ SECRET_KEY = 'rwuqn0td$xdg+*9bygxrj^6@jzzisg0!d(-@x88vh@j$$92mkb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myapp.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['wsshsherlockholmeswssh.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
