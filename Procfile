@@ -1,0 +1,1 @@
+web: gunicorn sherlockholmes.wsgi --log-file -
