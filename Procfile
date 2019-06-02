@@ -1,1 +1,1 @@
-web: gunicorn sherlockholmes.wsgi --log-file -
+web: gunicorn wsshsherlockholmeswssh.wsgi --log-file -
