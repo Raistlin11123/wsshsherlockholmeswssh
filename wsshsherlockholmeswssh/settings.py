@@ -130,6 +130,8 @@ LOGIN_URL = '/investigation1/login'
 #where the user is redirected after his connexion
 LOGIN_REDIRECT_URL = '/investigation1/list_clues'
 
+LOGOUT_REDIRECT_URL = '/investigation1/list_clues'
+
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)

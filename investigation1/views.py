@@ -174,5 +174,5 @@ def connexion(request):
 #function for the login out (very easy) (useless)
 def logout_view(request):
     	logout(request)
-    	redirect('list_clues')
+    	return redirect('list_clues')
 	#We redirect the user on the connexion page
