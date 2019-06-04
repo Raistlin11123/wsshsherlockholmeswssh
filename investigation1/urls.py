@@ -10,6 +10,7 @@ urlpatterns = [
 	path('logout', views.logout_view, name='logout'),
     path('list_clues', views.list_clues, name='list_clues'),
     path('content_clue/<int:id_clue>', views.content_clue, name='content_clue'),
-    path('connexion', views.connexion, name='connexion'),
+    path('enumeration', views.enumeration, name='enumeration'),
+
     #path('login', auth_views.LoginView.as_view(template_name= 'investigation1/login.html'), name='login'),
 ]

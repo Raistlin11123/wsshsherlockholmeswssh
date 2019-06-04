@@ -1,0 +1,6 @@
+{% for clue in all_clues %}
+<p>{{clue.title}}</p>
+<p>{{clue.number}}</p>
+{% empty %}
+<li>Pas encore d'indice.</li>
+{% endfor %}

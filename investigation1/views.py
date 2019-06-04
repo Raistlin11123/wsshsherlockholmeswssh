@@ -20,33 +20,6 @@ def rules(request):
 	return render(request, 'investigation1/rules.html', locals())
 
 
-#function for the connexion of the user. I don't use the name login because it's already used by the auth library
-def login_view(request):
-	error = False
-
-	
-
-	if request.method == "POST":
-		form = LoginForm(request.POST)
-		if form.is_valid():
-			username = form.cleaned_data["username"]
-			password = form.cleaned_data["password"]
-			user = authenticate(username=username, password=password)  # We check wither the data are correct
-			if user:  # If the object returned is not None
-        	    		login(request, user)  # We log the user in.
-            		# Otherwise, an error is displayed
-			else:
-               			error = True
-	else:
-        	form = LoginForm()
-
-	if request.user.is_authenticated:
-		messages.success(request, 'Bienvenu, ami de Sherlock!')
-		return redirect('list_clues') #redirection si la connexion s'est bien effectué. Il doit y avoir un moyen plus simple. A chercher
-
-
-	return render(request, 'investigation1/login.html', locals())
-
 @login_required
 def list_clues(request):
 	#Formulaire pour un nouvel indice
@@ -122,53 +95,35 @@ def content_clue(request, id_clue):
 	return render(request,'investigation1/content_clue.html',{'whole_clue':whole_clue,'number':number}, )
 
 
+#---------------Login & Logout---------------------------------
 
 
+#function for the connexion of the user. I don't use the name login because it's already used by the auth library
+def login_view(request):
+	error = False
+
+	
+
+	if request.method == "POST":
+		form = LoginForm(request.POST)
+		if form.is_valid():
+			username = form.cleaned_data["username"]
+			password = form.cleaned_data["password"]
+			user = authenticate(username=username, password=password)  # We check wither the data are correct
+			if user:  # If the object returned is not None
+        	    		login(request, user)  # We log the user in.
+            		# Otherwise, an error is displayed
+			else:
+               			error = True
+	else:
+        	form = LoginForm()
+
+	if request.user.is_authenticated:
+		messages.success(request, 'Bienvenu, ami de Sherlock!')
+		return redirect('list_clues') #redirection si la connexion s'est bien effectué. Il doit y avoir un moyen plus simple. A chercher
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def connexion(request):
-    error = False
-
-    if request.method == "POST":
-        form = ConnexionForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
-            user = authenticate(username=username, password=password)  # Nous vérifions si les données sont correctes
-            if user:  # Si l'objet renvoyé n'est pas None
-                login(request, user)  # nous connectons l'utilisateur
-            else: # sinon une erreur sera affichée
-                error = True
-    else:
-        form = ConnexionForm()
-
-    return render(request, 'investigation1/connexion.html', locals())
-
-
+	return render(request, 'investigation1/login.html', locals())
 
 
 #function for the login out (very easy) (useless)
@@ -176,3 +131,13 @@ def logout_view(request):
     	logout(request)
     	return redirect('list_clues')
 	#We redirect the user on the connexion page
+    
+    
+    
+    
+#-------------------TEST PAS POUR LE SITE-----------------------
+
+def enumeration(request):
+    all_clues = Clue.objects.all()
+    #mettre un order by avec la date de parution de l'indice
+    return render(request, 'investigation1/enumeration.html',  {'all_clues':all_clues})
