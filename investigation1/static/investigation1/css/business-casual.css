@@ -86,7 +86,7 @@ hr {
 
 .intro-text {
     text-transform: uppercase;
-    font-size: 1.25em;
+    font-size: 1.0em;
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -208,8 +208,9 @@ footer p {
 }
 
 .intro-text {
-  font-size: 40px;
-  font-weight: 300;
+  font-weight: 400;
+    font-size: 2.5em
+    
 }
 
 .detail-separator {
@@ -281,6 +282,7 @@ form {
 
 }
 
+/*Pour les phones*/
 #rage {
     display: block;
     max-width: 100%;
@@ -288,4 +290,18 @@ form {
     margin-top: 3em;
     border-radius:0.5em;
     height: auto;
+}
+
+/* Pour les écran d'ordi */
+@media screen and (min-width:1200px) {
+    #rage {
+        max-width: 70%;
+  
+    }
+}
+
+
+
+title-clue {
+    font-size: 3em;
 }
