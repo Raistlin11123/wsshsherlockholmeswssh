@@ -283,8 +283,9 @@ form {
 
 #rage {
     display: block;
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     margin-top: 3em;
-    border-radius:4em;
+    border-radius:0.5em;
+    height: auto;
 }
