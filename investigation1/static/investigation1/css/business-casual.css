@@ -292,16 +292,21 @@ form {
     height: auto;
 }
 
+#title-clue {
+    font-size: 1.8em;
+}
+
+
 /* Pour les écran d'ordi */
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1000px) {
     #rage {
         max-width: 70%;
   
     }
+
+    #title-clue {
+        font-size: 4em;
+    }
 }
 
 
-
-title-clue {
-    font-size: 3em;
-}
