@@ -19,6 +19,9 @@ def scenario(request):
 def rules(request):
 	return render(request, 'investigation1/rules.html', locals())
 
+def loderio(request):
+	return render(request, 'investigation1/loderio.html', locals())
+
 
 @login_required
 def list_clues(request):
