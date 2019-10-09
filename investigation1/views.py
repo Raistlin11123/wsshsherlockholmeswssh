@@ -122,7 +122,7 @@ def login_view(request):
         	form = LoginForm()
 
 	if request.user.is_authenticated:
-		messages.success(request, 'Bienvenu, ami de Sherlock!')
+		messages.success(request, 'Bienvenu, {}'.format(request.user.username))
 		return redirect('list_clues') #redirection si la connexion s'est bien effectué. Il doit y avoir un moyen plus simple. A chercher
 
 
